@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>404 Page not found !!!</title>
+    <link rel="stylesheet" href="">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            max-width: 800px;
+            margin: 0px auto;
+        }
+        #left{
+            float: left;
+            width: 40%;
+        }
+        #right{
+            float: left;
+            width: 60%;
+        }
+        #right h2{
+            text-align: center;
+            margin-top: 50px;
+        }
+        #right p{
+            text-align: center;
+            margin-top: 20px;
+        }
+        #right a{
+            text-decoration: none;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="left">
+            <img src="<?php echo BASE_URL ?>public/admin/img/404_man.jpg" alt="Page not found">
+        </div>
+        <div id="right">
+            <h2>Oops! Page not found !!!</h2> 
+            <p>
+                <a href="javascript:history.go(-1)">Go back</a>
+                <a href="<?php echo BASE_URL ?>">Home</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

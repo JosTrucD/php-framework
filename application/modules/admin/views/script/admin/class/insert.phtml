@@ -1,0 +1,77 @@
+<?php 
+    setTemplate('admin/head');
+    setTemplate('admin/header');
+    setTemplate('admin/left');
+ ?>
+ <style>
+    label{
+        float: left;
+        width: 150px;
+    }
+    input {
+        width: 300px;
+        margin-bottom: 10px;
+    }
+    .error{
+        color: red;
+        font-style: italic;
+    }
+ </style>
+<!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        Form Insert
+                        <small>Class</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="<?php echo BASE_URL ?>admin/home"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li><a href="<?php echo BASE_URL ?>admin/class">Class</a></li>
+                        <li class="active">Insert</li>
+                    </ol>
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <!-- left column -->
+                        <div class="col-md-12">
+                            <!-- general form elements -->
+                            <div class="box box-primary">
+                                <div class="box-header">
+                                    <h3 class="box-title">Class Insert</h3>
+                                </div><!-- /.box-header -->
+                                <!-- form start -->
+                                <form role="form" action="" method="post">
+                                    <div class="box-body">
+                                        <div class="form-group">
+                                            <label>Name</label>
+                                            <input type="name" placeholder="Enter class name" name="name">
+                                            <span class="error"><?php echo isset($this->errorName) ? $this->errorName : ""; ?></span>
+                                            <br>
+                                            <label for="">Status</label>
+                                            <select name="status" id="">
+                                                <option value="1">Show</option>
+                                                <option value="2">Hidden</option>
+                                            </select>
+                                            <br>
+                                        </div>
+                                            <label>Rewrite</label>
+                                        <br>
+                                        <br>
+                                        <textarea name="rewrite" class="ckeditor" id="editor" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea> 
+                                        <br>
+                                        <p class="error"><?php echo @$this->errorRewrite ?></p>
+                                    </div> 
+                                    <div class="box-footer">
+                                        <button type="submit" class="btn btn-primary" name="insert">Insert</button>
+                                    </div>
+                                </form>
+                            </div><!-- /.box -->
+                        </div><!--/.col (right) -->
+                    </div>   <!-- /.row -->
+                </section><!-- /.content -->
+            </aside><!-- /.right-side -->
+
+<?php setTemplate('admin/footer') ?>

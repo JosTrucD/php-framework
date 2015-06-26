@@ -1,0 +1,89 @@
+<?php 
+    setTemplate('admin/head');
+    setTemplate('admin/header');
+    setTemplate('admin/left');
+ ?>
+ <style>
+    label{
+        float: left;
+        width: 150px;
+    }
+    input {
+        width: 300px;
+        margin-bottom: 10px;
+    }
+    .error{
+        color: red;
+        font-style: italic;
+    }
+ </style>
+<!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        Form Insert
+                        <small>Cass</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="<?php echo BASE_URL ?>admin/home"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li><a href="<?php echo BASE_URL ?>admin/cass">Cass</a></li>
+                        <li class="active">Insert</li>
+                    </ol>
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <!-- left column -->
+                        <div class="col-md-12">
+                            <!-- general form elements -->
+                            <div class="box box-primary">
+                                <div class="box-header">
+                                    <h3 class="box-title">Class Insert</h3>
+                                </div><!-- /.box-header -->
+                                <!-- form start -->
+                                <form role="form" action="" method="post">
+                                    <div class="box-body">
+                                        <div class="form-group">
+                                            <label>Class</label>
+                                            <select name="class">
+                                                <option value="">Select class ...</option>
+                                                <?php 
+                                                    if($this->class){
+                                                        foreach ($this->class as $valueClass) {
+                                                            echo "<option name='".$valueClass['class_name']."' value='".$valueClass['class_id']."'>".$valueClass['class_name']."</option>";
+                                                        }
+                                                    }
+                                                 ?>
+                                            </select>
+                                            <span class="error"><?php echo @$this->errorClass ?></span>
+                                            <br>
+                                            <br>
+                                            <label>Categories</label>
+                                            <select name="category" id="category">
+                                                <option value="">Select categories ...</option>
+                                                <?php 
+                                                    if($this->category){
+                                                        foreach ($this->category as $valueCategory) {
+                                                            echo "<option value='".$valueCategory['cate_id']."'>".$valueCategory['cate_name']."</option>";
+                                                        }
+                                                    }
+                                                 ?>
+                                            </select>
+                                            <span class="error"><?php echo @$this->errorCategory ?></span>
+                                            <br>
+                                            <span class="error"><?php echo @$this->error; ?></span>
+                                        </div>
+                                    </div> 
+                                    <div class="box-footer">
+                                        <button type="submit" class="btn btn-primary" name="insert">Insert</button>
+                                    </div>
+                                </form>
+                            </div><!-- /.box -->
+                        </div><!--/.col (right) -->
+                    </div>   <!-- /.row -->
+                </section><!-- /.content -->
+            </aside><!-- /.right-side -->
+
+<?php setTemplate('admin/footer') ?>

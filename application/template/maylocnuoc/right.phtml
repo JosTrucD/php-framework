@@ -1,0 +1,135 @@
+	<div class="col-sm-9 padding-right">
+					<div class="features_items"><!--features_items-->
+						<h2 class="title text-center">Sản phẩm</h2>
+						<?php 
+							if($data['product']):
+								foreach ($data['product'] as $value):
+						 ?>
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<a href="<?php echo BASE_URL."maylocnuoc/home/detail/".$value['pro_id'] ?>" class="product-hover">
+											<img class="tooltip" src="<?php echo BASE_URL."uploads/products/".$value['pro_id']."/".$value['pro_image'] ?>" alt="<?php echo $value['pro_image'] ?>" title="<?php echo $value['pro_information'] ?>">
+											<img src="<?php echo BASE_URL."uploads/products/".$value['pro_id']."/".$value['pro_image'] ?>" with="288px" height="288px" alt="<?php echo $value['pro_image'] ?>">
+										<h2><?php echo $value['pro_price'] ?></h2>
+										<p><?php echo $value['pro_name'] ?></p>
+										</a>
+									</div>
+									<!-- <img src="<?php echo BASE_URL ?>public/maylocnuoc/images/home/new.png" class="new" alt="" /> -->
+								</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+										<li><a href="<?php echo BASE_URL."maylocnuoc/home/detail/".$value['pro_id'] ?>"><i class="fa fa-plus-square"></i>Chi tiết</a></li>
+										<li><a href="#"><i class="fa fa-shopping-cart"></i>Đặt mua</a>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<?php 
+								endforeach;
+							endif;
+						 ?>
+					</div>
+					
+
+					<div class="recommended_items"><!--recommended_items-->
+						<h2 class="title text-center">Sản phẩm khác</h2>
+						
+						<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+							<div class="carousel-inner">
+								<div class="item active">	
+									<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="<?php echo BASE_URL ?>public/maylocnuoc/images/home/recommend1.jpg" alt="" />
+													<h2>$56</h2>
+													<p>Easy Polo Black Edition</p>
+													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Đặt Mua</a>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="<?php echo BASE_URL ?>public/maylocnuoc/images/home/recommend2.jpg" alt="" />
+													<h2>$56</h2>
+													<p>Easy Polo Black Edition</p>
+													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Đặt Mua</a>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="<?php echo BASE_URL ?>public/maylocnuoc/images/home/recommend3.jpg" alt="" />
+													<h2>$56</h2>
+													<p>Easy Polo Black Edition</p>
+													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Đặt Mua</a>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">	
+									<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="<?php echo BASE_URL ?>public/maylocnuoc/images/home/recommend1.jpg" alt="" />
+													<h2>$56</h2>
+													<p>Easy Polo Black Edition</p>
+													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Đặt Mua</a>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="<?php echo BASE_URL ?>public/maylocnuoc/images/home/recommend2.jpg" alt="" />
+													<h2>$56</h2>
+													<p>Easy Polo Black Edition</p>
+													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Đặt Mua</a>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="<?php echo BASE_URL ?>public/maylocnuoc/images/home/recommend3.jpg" alt="" />
+													<h2>$56</h2>
+													<p>Easy Polo Black Edition</p>
+													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Đặt Mua</a>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							 <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+								<i class="fa fa-angle-left"></i>
+							  </a>
+							  <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+								<i class="fa fa-angle-right"></i>
+							  </a>			
+						</div>
+					</div><!--/recommended_items-->
+					
+				</div>
+			</div>
+		</div>

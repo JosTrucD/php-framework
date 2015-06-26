@@ -1,0 +1,192 @@
+<?php 
+    setTemplate('admin/head');
+    setTemplate('admin/header');
+    setTemplate('admin/left');
+ ?>
+ <style>
+    label{
+        float: left;
+        width: 125px;
+    }
+    .error{
+        color: red;
+        font-style: italic;
+    }
+ </style>
+<form action="" method="post" enctype="multipart/form-data">
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        Form Insert
+                        <small>Product</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li><a href="#">Product</a></li>
+                        <li class="active">Insert</li>
+                    </ol>
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <div class="box box-info">
+                                <div class="box-header">
+                                    <h3 class="box-title">Thông tin chung</h3>
+                                </div>
+                                <div class="box-body">
+                                    <div class="form-group">
+                                        <label>Model</label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-barcode"></i>
+                                            </div>
+                                            <input type="text" name="name" class="form-control pull-right" value="<?php echo isset($_POST['name']) ? $_POST['name'] : "" ?>" placeholder="Tên sản phẩm"/>
+                                        </div><!-- /.input group -->
+                                    </div><!-- /.form group -->
+                                    <div class="form-group">
+                                        <label>Price</label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-dollar"></i>
+                                            </div>
+                                            <input type="text" class="form-control pull-right" name="price" value="<?php echo isset($_POST['price']) ? $_POST['price'] : "" ?>" placeholder="Giá sản phẩm"/>
+                                        </div><!-- /.input group -->
+                                    </div><!-- /.form group -->
+                                    <div class="form-group">
+                                        <label>Trạng thái</label>
+                                        <div class="input-group">
+                                            <select name="status">
+                                                <option value="1">Hiển thị</option>
+                                                <option value="2">Không hiển thị</option>
+                                            </select>
+                                        </div><!-- /.input group -->
+                                    </div><!-- /.form group -->
+                                    <div class="form-group">
+                                        <label>Ảnh đại diện</label>
+                                        <div class="input-group">
+                                            <input type="file" name="image" value=""/>
+                                        </div><!-- /.input group -->
+                                    </div><!-- /.form group -->
+                                    <label for="">Thông tin mô tả</label>
+                                    <br>
+                                    <br>
+                                        <textarea name="description" class="ckeditor" placeholder="Thông tin mô tả sản phẩm" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"><?php echo isset($_POST['description']) ? $_POST['description'] : "" ?></textarea>
+                                        <br>
+                                        <p class="error"><?php echo @$this->errorDescription ?></p>
+                                    <label>Bài viết</label>
+                                    <br>
+                                    <br>
+                                    <textarea name="rewrite" class="ckeditor" id="editor" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"><?php echo isset($_POST['rewrite']) ? $_POST['rewrite'] : "" ?></textarea> 
+                                    <br>
+                                    <p class="error"><?php echo @$this->errorRewrite ?></p>
+
+                                </div><!-- /.box-body -->
+                                <div class="box-footer">
+                                    <button type="submit" class="btn btn-primary" name="insert">Insert</button>
+                                </div>
+                            </div><!-- /.box -->
+
+
+                        </div><!-- /.col (left) -->
+                        <div class="col-md-6">
+                            <div class="box box-info">
+                                <div class="box-header">
+                                    <h3 class="box-title">Thông tin SEO</h3>
+                                </div>
+                                <div class="box-body">
+                                    <div class="form-group">
+                                        <label>Title</label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-flag-o"></i>
+                                            </div>
+                                            <input type="text" class="form-control pull-right" name="title" value="<?php echo isset($_POST['title']) ? $_POST['title'] : "" ?>" placeholder="Enter title"/>
+                                        </div><!-- /.input group -->
+                                    </div><!-- /.form group -->
+                                    <div class="form-group">
+                                        <label>Url Rewrite</label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-bookmark-o"></i>
+                                            </div>
+                                            <input type="text" class="form-control pull-right" name="url" value="<?php echo isset($_POST['url']) ? $_POST['url'] : "" ?>" placeholder="Enter url rewrite"/>
+                                        </div><!-- /.input group -->
+                                    </div><!-- /.form group -->
+                                    <!-- textarea -->
+                                    <div class="form-group">
+                                        <label>Meta keyword</label>
+                                            <textarea name="keyword" class="form-control" rows="3" placeholder="Enter meta keyword"><?php echo isset($_POST['keyword']) ? $_POST['keyword'] : "" ?></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Meta description</label>
+                                            <textarea name="meta_description" class="form-control" rows="3" placeholder="Enter meta meta description"><?php echo isset($_POST['meta_description']) ? $_POST['meta_description'] : "" ?></textarea>
+                                    </div>
+                                </div><!-- /.box-body -->
+                            </div><!-- /.box -->
+                            <div class="box box-primary">
+                                <div class="box-header">
+                                    <h3 class="box-title">Danh mục sản phẩm</h3>
+                                </div>
+                                <div class="box-body">
+                                    <!-- checkbox -->
+                                    <div class="form-group">
+                                            <input type="checkbox" class="minimal"/> tw45t
+                                            <br>
+                                            <input type="checkbox" class="minimal"/> tw4t5
+                                            <br>
+                                            <input type="checkbox" class="minimal"/> tw5t4t
+                                    </div>
+
+                                </div><!-- /.box-body -->
+                            </div><!-- /.box -->
+
+                            <!-- iCheck -->
+                            <div class="box box-success">
+                                <div class="box-header">
+                                    <h3 class="box-title">Ảnh sản phẩm</h3>
+                                </div>
+                                <div class="box-body">
+
+                                    <table class="table table-bordered">
+                                        <tr>
+                                            <th style="width: 10px">#</th>
+                                            <th>Task</th>
+                                            <th>Progress</th>
+                                            <th style="width: 40px">Label</th>
+                                        </tr>
+                                        <tr>
+                                            <td>1.</td>
+                                            <td>Update software</td>
+                                            <td>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                                                </div>
+                                            </td>
+                                            <td><span class="badge bg-red">55%</span></td>
+                                        </tr>
+                                    </table>
+                                    <br>
+                                    <div class="form-group">
+                                        <label>Ảnh sản phẩm</label>
+                                        <div class="input-group">
+                                            <input type="file" name="image[]" multiple="multiple"/>
+                                        </div><!-- /.input group -->
+                                    </div><!-- /.form group -->
+                                    <div class="box-footer">
+                                        <button type="submit" class="btn btn-primary" name="upload">Upload</button>
+                                    </div>
+
+                                </div><!-- /.box-body -->
+                            </div><!-- /.box -->
+                        </div><!-- /.col (right) -->
+                    </div><!-- /.row -->                    
+
+                </section><!-- /.content -->
+            </aside><!-- /.right-side -->
+</form>
+<?php setTemplate('admin/footer') ?>
