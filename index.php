@@ -12,3 +12,5 @@
 	require_once(APP_PATH.'help/myhelper.php');
 	$objLoad = new Jos_Autoload();
  ?>
+
+ <!-- Hi everyone. I'm Jos Truc. Nice to meet you! -->
